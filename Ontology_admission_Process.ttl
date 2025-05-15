@@ -1,0 +1,458 @@
+@prefix : <http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/> .
+
+<http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess> rdf:type owl:Ontology ;
+                                                                              rdfs:comment "This ontology is all about a fyp process at university"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/belongsToInstitution
+:belongsToInstitution rdf:type owl:ObjectProperty ;
+                      rdfs:domain :CapstoneProject ;
+                      rdfs:range :Institution .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/evaluates
+:evaluates rdf:type owl:ObjectProperty ;
+           rdfs:domain :Reviewer ;
+           rdfs:range :Evaluation .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/evaluatesCriterion
+:evaluatesCriterion rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Evaluation ;
+                    rdfs:range :EvaluationCriterion .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/hasCoordinator
+:hasCoordinator rdf:type owl:ObjectProperty ;
+                rdfs:domain :CapstoneProject ;
+                rdfs:range :AcademicCoordinator .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/hasDeliverable
+:hasDeliverable rdf:type owl:ObjectProperty ;
+                rdfs:domain :CapstoneProject ;
+                rdfs:range :Document .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/hasEvaluationCriterion
+:hasEvaluationCriterion rdf:type owl:ObjectProperty ;
+                        rdfs:domain :CapstoneProject ;
+                        rdfs:range :EvaluationCriterion .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/hasGrade
+:hasGrade rdf:type owl:ObjectProperty ;
+          rdfs:domain :EvaluationCriterion ;
+          rdfs:range :Grade .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/hasPhase
+:hasPhase rdf:type owl:ObjectProperty ;
+          rdfs:domain :CapstoneProject ;
+          rdfs:range :ProjectPhase .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/hasProposal
+:hasProposal rdf:type owl:ObjectProperty ;
+             rdfs:domain :CapstoneProject ;
+             rdfs:range :Proposal .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/hasReviewer
+:hasReviewer rdf:type owl:ObjectProperty ;
+             rdfs:domain :CapstoneProject ;
+             rdfs:range :Reviewer .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/hasStudent
+:hasStudent rdf:type owl:ObjectProperty ;
+            rdfs:domain :CapstoneProject ;
+            rdfs:range :Student .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/hasSupervisor
+:hasSupervisor rdf:type owl:ObjectProperty ;
+               rdfs:domain :CapstoneProject ;
+               rdfs:range :Supervisor .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/includesDocument
+:includesDocument rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Submission ;
+                  rdfs:range :Document .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/isForProject
+:isForProject rdf:type owl:ObjectProperty ;
+              rdfs:domain :Evaluation ;
+              rdfs:range :CapstoneProject .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/isSubmittedBy
+:isSubmittedBy rdf:type owl:ObjectProperty ;
+               rdfs:domain :Submission ;
+               rdfs:range :Student .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/submitsDocument
+:submitsDocument rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Student ;
+                 rdfs:range :Submission .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/comments
+:comments rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Grade ;
+          rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/contactNumber
+:contactNumber rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :Person ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/criterionName
+:criterionName rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :EvaluationCriterion ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/description
+:description rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :EvaluationCriterion ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/designation
+:designation rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :Supervisor ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/documentTitle
+:documentTitle rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :Document ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/email
+:email rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :Person ;
+       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/endDate
+:endDate rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :CapstoneProject ;
+         rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/evaluationDate
+:evaluationDate rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain :Evaluation ;
+                rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/facultyID
+:facultyID rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :Supervisor ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/fileFormat
+:fileFormat rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :Document ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/fileSize
+:fileSize rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Document ;
+          rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/gradeLetter
+:gradeLetter rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :Grade ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/institutionCode
+:institutionCode rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Institution ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/institutionName
+:institutionName rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Institution ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/location
+:location rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Institution ;
+          rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/maxScore
+:maxScore rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :EvaluationCriterion ;
+          rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :Person ;
+      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/overallComments
+:overallComments rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Evaluation ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/phaseName
+:phaseName rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :ProjectPhase ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/projectID
+:projectID rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :CapstoneProject ;
+           rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/projectTitle
+:projectTitle rdf:type owl:DatatypeProperty ;
+              rdfs:domain :CapstoneProject ;
+              rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/proposalSummary
+:proposalSummary rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :Proposal ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/proposalTitle
+:proposalTitle rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :Proposal ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/score
+:score rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :Grade ;
+       rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/startDate
+:startDate rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :CapstoneProject ;
+           rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/status
+:status rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain :CapstoneProject ;
+        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/studentID
+:studentID rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :Student ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/submissionDate
+:submissionDate rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain :Proposal ;
+                rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/submissionType
+:submissionType rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain :Submission ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/uploadDate
+:uploadDate rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :Document ;
+            rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/version
+:version rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :Document ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/website
+:website rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :Institution ;
+         rdfs:range xsd:anyURI .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/AcademicCoordinator
+:AcademicCoordinator rdf:type owl:Class ;
+                     rdfs:comment "Academic coordinator is a role ..." ;
+                     rdfs:isDefinedBy "www.google.com"^^xsd:anyURI ;
+                     rdfs:label "Academic Coordinator" .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/CapstoneProject
+:CapstoneProject rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/DesignDocument
+:DesignDocument rdf:type owl:Class ;
+                rdfs:subClassOf :Document ;
+                rdfs:label "Design Document" .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/Document
+:Document rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/DocumentationQuality
+:DocumentationQuality rdf:type owl:Class ;
+                      rdfs:subClassOf :EvaluationCriterion .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/Evaluation
+:Evaluation rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/EvaluationCriterion
+:EvaluationCriterion rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/FinalReport
+:FinalReport rdf:type owl:Class ;
+             rdfs:subClassOf :Document .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/GanttChart
+:GanttChart rdf:type owl:Class ;
+            rdfs:subClassOf :Document .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/Grade
+:Grade rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/Innovation
+:Innovation rdf:type owl:Class ;
+            rdfs:subClassOf :EvaluationCriterion .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/Institution
+:Institution rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/Person
+:Person rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/Poster
+:Poster rdf:type owl:Class ;
+        rdfs:subClassOf :Document .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/ProjectPhase
+:ProjectPhase rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/Proposal
+:Proposal rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/Reviewer
+:Reviewer rdf:type owl:Class ;
+          rdfs:subClassOf :Person .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/SRS
+:SRS rdf:type owl:Class ;
+     rdfs:subClassOf :Document .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/SourceCode
+:SourceCode rdf:type owl:Class ;
+            rdfs:subClassOf :Document .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/Student
+:Student rdf:type owl:Class ;
+         rdfs:subClassOf :Person .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/Submission
+:Submission rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/Supervisor
+:Supervisor rdf:type owl:Class ;
+            rdfs:subClassOf :Person .
+
+
+###  http://www.semanticweb.org/asifcomputer/ontologies/2025/3/admissionprocess/TechnicalMerit
+:TechnicalMerit rdf:type owl:Class ;
+                rdfs:subClassOf :EvaluationCriterion .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
